@@ -18,7 +18,7 @@ export default function Home() {
     setBarangState(barangs)
   }, [barangs])
 
-  function handleDeleteBarang(id){
+  function handleDeleteBarang(id) {
     dispatch(deleteBarang(id))
   }
 
@@ -28,10 +28,10 @@ export default function Home() {
         <Row>
           {barangState.map((barang) => {
             return (
-              <Col>
-                <Card key={barang.id} style={{ width: '18rem' }}>
+              <Col sm={3}>
+                <Card key={barang.id} style={{ width: '18rem', marginTop: '3rem' }}>
                   <Card.Header>
-                    <Button onClick={() => handleDeleteBarang(barang.id)}>Delete</Button>
+                    <p>Toko Online</p>
                   </Card.Header>
                   <Card.Img variant="top" src={barang.image_url} />
                   <Card.Body>
@@ -42,6 +42,7 @@ export default function Home() {
                     <h5>Stock</h5>
                     <p>{barang.stock}</p>
                   </Card.Body>
+                  <Button onClick={() => handleDeleteBarang(barang.id)}>Delete</Button>
                 </Card>
               </Col>
             )

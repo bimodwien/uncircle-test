@@ -28,7 +28,7 @@ export default function AddBarang() {
 
   return (
     <>
-      <Container>
+      <Container style={{ marginTop: '3rem' }}>
         <Form>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Barang</Form.Label>
@@ -46,7 +46,7 @@ export default function AddBarang() {
             <Form.Label>Foto</Form.Label>
             <Form.Control type="text" placeholder="Image Url" value={inputImage} onChange={(e) => setInputImage(e.target.value)} />
           </Form.Group>
-          <Button variant="primary" type="submit" onClick={(e) => handleSubmit(e) }>
+          <Button variant="primary" type="submit" onClick={(e) => handleSubmit(e)}>
             Submit
           </Button>
         </Form>

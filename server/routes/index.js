@@ -7,9 +7,9 @@ const { authentication, authorization } = require('../middlewares/auth')
 
 router.post('/login', UserController.login)
 
-router.get('/barang', BarangController.show)
-router.post('/barang', BarangController.add)
-router.put('/barang/:id', BarangController.edit)
-router.delete('/barang/:id', BarangController.delete)
+router.get('/barang',authentication, BarangController.show)
+router.post('/barang',authentication, authorization, BarangController.add)
+router.put('/barang/:id',authentication, authorization, BarangController.edit)
+router.delete('/barang/:id',authentication, authorization, BarangController.delete)
 
 module.exports = router
